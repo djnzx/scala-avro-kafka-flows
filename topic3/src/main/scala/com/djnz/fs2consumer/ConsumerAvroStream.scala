@@ -3,9 +3,10 @@ package com.djnz.fs2consumer
 import cats.effect._
 import com.djnz.avro
 import fs2.kafka._
-import fs2.kafka.vulcan.Auth
-import fs2.kafka.vulcan.AvroSettings
-import fs2.kafka.vulcan.SchemaRegistryClientSettings
+import vulcan.{Auth, AvroSettings, SchemaRegistryClientSettings}
+import io.confluent.kafka.schemaregistry.client.SchemaRegistryClient
+import io.confluent.kafka.serializers.KafkaAvroDeserializer
+
 import java.util.UUID
 
 /** https://fd4s.github.io/fs2-kafka/docs/quick-example */

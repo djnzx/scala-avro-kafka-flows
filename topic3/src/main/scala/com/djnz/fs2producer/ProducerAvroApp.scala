@@ -5,6 +5,7 @@ import cats.implicits.catsSyntaxOptionId
 import com.djnz.avro
 import fs2.kafka.vulcan.{Auth, AvroSettings, SchemaRegistryClientSettings}
 import fs2.kafka._
+import io.confluent.kafka.serializers.KafkaAvroSerializer
 
 import java.util.UUID
 
@@ -12,7 +13,6 @@ import java.util.UUID
 object ProducerAvroApp extends App {
 
   val serverIp = "kafka.bla-bla-bla:9092"
-  val consumerGroupId = "ingest-".concat(UUID.randomUUID().toString)
   val topicOut = "my-topic-out"
 
   implicit val avroSettings: AvroSettings[IO] = AvroSettings {

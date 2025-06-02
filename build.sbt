@@ -52,10 +52,12 @@ lazy val vulcan101 = (project in file("vulcan101"))
   .settings(
     crossScalaVersions := Seq(Versions.scala213),
     libraryDependencies ++= Seq(
-      "org.apache.avro"  % "avro"              % "1.11.3", // fasterxml.jackson
-      "com.github.fd4s" %% "vulcan"            % "1.11.0", // apache avro + cats-free monad
-      "com.github.fd4s" %% "vulcan-generic"    % "1.11.0", // vulcan + shapeless + magnolia
-      "com.github.fd4s" %% "vulcan-enumeratum" % "1.11.0", // vulcan + vulcan-generic + enumeratum
+      "org.apache.avro"  % "avro"                  % "1.11.3", // fasterxml.jackson
+      "com.github.fd4s" %% "vulcan"                % "1.11.0", // apache avro + cats-free monad
+      "com.github.fd4s" %% "vulcan-generic"        % "1.11.0", // vulcan + shapeless + magnolia
+      "com.github.fd4s" %% "vulcan-enumeratum"     % "1.11.0", // vulcan + vulcan-generic + enumeratum
+      "dev.zio"         %% "zio-kafka"             % "2.8.2",
+      "io.confluent"     % "kafka-avro-serializer" % "7.6.2"
     )
   )
 
